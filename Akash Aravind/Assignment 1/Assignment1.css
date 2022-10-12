@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  background: lightskyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.Container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 1000px;
+  margin: 50px;
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+}
+
+.Container .Left-side {
+  position: relative;
+  background: rgb(0, 42, 42);
+  padding: 40px;
+}
+.profileText {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.profileText .imgBx {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profileText .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profileText h2 {
+  color: white;
+  font-size: 1.5em;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+.profileText h2 span {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+.contact-info {
+  padding-top: 40px;
+  color: white;
+}
+.title {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.contact-info ul {
+  position: relative;
+}
+.contact-info ul li {
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.contact-info ul li .icon{
+    display: inline-block;
+    width:30px;
+    font-size: 18px;
+    color: lightblue;
+}
+.contact-info ul li span{
+    color: white;
+    font-weight: 300;
+}
+.contact-info-education{
+    padding-top: 40px;
+    color: white;
+}
+.contact-info-education li {
+    margin-bottom: 15px;
+}
+.contact-info-education h5{
+    color: aqua;
+    font-weight: 500;
+}
+.contact-info-education h4:nth-child(2){
+    color: white;
+    font-weight: 500;
+}
+.contact-info-education h4{
+    color: lightblue;
+    font-weight: 300;
+}
+.contact-info-lang{
+    padding-top: 40px;
+    color: white;
+}
+.contact-info-lang .percent{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: black;
+    display: block;
+    margin-top: 5px;
+}
+.contact-info-lang .percent div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: lightskyblue;
+}
+
+
+.Container .Right-side {
+  position: relative;
+  background: white;
+  padding: 40px;
+}
+.about{
+    margin-bottom: 50px;
+}
+.about:last-child{
+    margin-bottom: 0;
+}
+.title2{
+    color: darkblue;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.p{
+    color: darkgrey;
+}
+.about-skills .box{
+    position: relative;
+    width: 100%;
+    display: grid;
+    
+    grid-template-columns: 150px 1fr;
+    justify-content: center;
+    align-items: center;
+    bottom: 10px;
+}
+.about-skills .box h4{
+    text-transform: uppercase;
+    color: gray;
+    font-weight: 500;
+}
+.about-skills .box .percent{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: lightgrey;
+}
+.about-skills .box .percent div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: lightskyblue;
+}
+.about-interest ul{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    top: 10px;
+}
+.about-interest ul li{
+    list-style: none;
+    color: dimgray;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.about-interest ul li i{
+    color: lightskyblue;
+    font-size: 18px;
+    width: 20px;
+}
+
+@media(max-width: 1000px)
+{
+    .Container{
+        margin: 10px;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .about-interest ul{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width: 600px){
+    .about .box{
+        flex-direction: column;
+
+    }
+    .about-interest ul{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .about-skills .box{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
