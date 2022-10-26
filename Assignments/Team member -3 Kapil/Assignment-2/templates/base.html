@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+      .bodybgcolor
+    {
+    background: goldenrod;
+    }
+    .img {
+    height: 200px;
+    margin-bottom: 10%;
+
+  }
+  .img img{
+    width:100%;
+    height:100%;
+    
+  }
+  .para
+  {
+    padding-top: 7%;
+  }
+  .font{
+    font-weight: 300;
+    color: black;
+  }
+  .btcolor{
+    font-weight: 600;
+    color: rgb(17, 34, 14);
+  }
+  .topbgcolor
+  {
+    background: linear-gradient(to top right, #ff9966 0%, #ffcc00 100%);
+}
+  
+    </style>
+</head>
+<body class="bodybgcolor">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/" >GAMES PLATFORM</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="about">ABOUT</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login"><span class="glyphicon glyphicon-user"></span> login</a></li>
+            <li>{% block content333 %}{% endblock %}</li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        {% block content %}
+        {% endblock %}
+      </div>
+      {% block content1 %}
+      {% endblock %}
+      <div class="container-fluid">
+        <div class="navbar-fixed-bottom">
+          <a class="navbar-brand btcolor"  >@Done by Kapil</a>
+        </div>
+        </div>
+</body>
+</html>
