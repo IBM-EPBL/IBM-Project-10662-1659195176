@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}view all users{% endblock %}
+{% block content %}
+    {% for item in values %}
+    <p>Name:{{item.name}}</p>
+    <p>Email:{{item.email}}</p>
+    {% endfor %}
+    <a href="content"><button type="button">CLICK TO ACCESS PAGE</button></a>
+{% endblock %}
