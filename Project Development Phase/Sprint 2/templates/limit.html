@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}limit{% endblock %}
+{% block body %} 
+
+<p> Currently your MONTHLY limit is <span style="color:#FF0000">₹{{y}} </span></p>
+
+
+<form action="/limitnum" method="POST">
+
+    <p> ENTER the MONTHLY LIMIT to avoid over EXPENSES, <br>ONCE YOU EXCEED LIMIT WE NOTIFY YOU WITH MAIL!</p> <br/>
+    <input type="number" name="number" required/> <span> 
+        <button class="btn btn-warning" type="submit">ENTER</button>
+    </span>
+</form>
+
+{% endblock %}

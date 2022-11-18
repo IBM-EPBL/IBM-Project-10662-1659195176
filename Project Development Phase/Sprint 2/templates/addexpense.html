@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}addExpense{% endblock %}
+{% block body %} 
+ 
+    <div class="container-sm border border-success center border border-5  mb-4 rounded-5">
+        <h3>Add Transaction</h3>
+        <form action="/addexpense" method="POST">
+            
+            <div class="form-group">
+                 <label for="" class="orange weights">Date</label> 
+                 <input class="form-control" type="datetime-local" name="date" id="date" required></div>
+            <div class="form-group"> <label for="" class="orange weights">Expense name</label> 
+                <input class="form-control" type="text" name="expensename" id="expensename" required>
+            </div>
+            <div class="form-group">
+                 <label for="" class="orange weights">Expense Amount</label> 
+                  <input class="form-control"  type="number" min="0" name="amount" id="amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="paymode" class="orange weights">payment method</label> 
+                <select class="form-control" name="paymode" id="paymode" required>
+                    <option  selected hidden>Pay-Mode</option>
+                    <option name="cash" value="cash">cash</option>
+                    <option name="debitcard" value="debitcard">debitcard</option>
+                    <option name="creditcard" value="creditcard">creditcard</option>
+                    <option name="epayment" value="epayment">epayment</option>
+                    <option name="onlinebanking" value="onlinebanking">onlinebanking</option>
+                
+                </select>
+            
+           
+            
+
+             <div class="form-group">
+                <label for="category"  class="orange weights">select category</label>
+                <select class="form-control" name="category" id="category" required>
+
+                     <option selected hidden>Category</option>
+                    <option   name = "food" value="food">food</option>
+                    <option name = "entertainment" value="entertainment">Entertainment</option>
+                    <option name = "business" value="business">Business</option>
+                    <option name ="rent" value="rent">Rent</option>
+                    <option name = "EMI" value="EMI">EMI</option>
+                    <option name = "other" value="other">other</option>
+        
+                </select>
+            </div>
+
+           
+            <div style="text-align:center">
+            <input class="btn btn-success btn-lg  my-3" type="submit" value="Add" id="">
+            </div>
+        </form>               
+     </div>
+    
+</body>
+{% endblock %}
