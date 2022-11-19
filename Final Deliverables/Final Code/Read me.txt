@@ -1,0 +1,4 @@
+1. pull image from docker hub to docker 
+	docker pull akash3451/xpendee
+2.run Docker image.
+	
