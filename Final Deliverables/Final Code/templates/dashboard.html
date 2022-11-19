@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}dashboard{% endblock %}
+{% block body %} 
+    <div class="container-sm center mb-4">
+        <div class="jumbotron text-center">
+            <h1>xpendee</h1>
+            <p> Track spending in best way </p> 
+        </div>
+    </div>
+    <div class="container-sm center border mb-4 ">
+        <h3 style="color:balck; text-align: center;">Welcome <span style="color:#FF9551;"">{{ msg }}</span></h3>
+    </div>
+    <div class="container-sm border border-success center border border-5 my-4 rounded" style="background:#153462;">
+        <h3 class="mt-3" style="color:#FF9551">TODAY TRANSACTIONS</h3>
+        {% if expense is defined %}
+    {% for row in expense  %}
+    
+   
+    <div class="row">
+        
+        <div class="col-md-12">
+            <div class="card shadow-sm mb-2 rounded"></div> 
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        
+                        <span class="btn btn-outline-light" style="color:#fff">{{row[2]}}</span> </div>
+                    <div class="col-md-2 mt-3" style="color:#fff"><H6>{{row[3]}}</H6></div>
+                    <div class="col-md-2 mt-3"style="color:#fff" > ₹<span style=" color: rgb(255, 0, 0) "> {{row[4]}} </div>
+                    <div class="col-md-2 mt-3">
+                        <span class="badge badge-pill badge-info">{{row[5]}}</span>
+                    </div>
+
+                    <div class="col-md-2 mt-3">
+                        <span class="badge badge-primary">{{row[6]}}</span>
+                        </div>
+                        
+                        
+                   </div>
+            </div>
+
+        </div>
+    </div>
+    <!--when no DATA-Found-->
+   {% else %}
+   <div class="card shadow-sm mb-2 bg-white rounded"></div> 
+   <div class="card-body">
+   <div class="orange" style="text-align: center ; font-family: monospace; color:red ; "><h5><a  href="/add"> ADD-DATA </a> to Display</h3></div>
+    </div>
+
+
+    {% endfor %}
+    {% endif %}
+   
+    <div class="card-footer text-muted" style="text-align:center">          					
+       <a href='/display'> <button class="btn btn-success btn-block btn-lg mb-3" >view detail</button></a>
+     </div>
+</div>
+</body>
+{% endblock %}

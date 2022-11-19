@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% block title %}Year{% endblock %}
+{% block body %}
+
+<div class="container ">
+                                                                                              
+
+<div class="row">
+    <div class="col-md-5">
+        <h3 class="mt-5">Year Expense Breakdown</h3>
+        
+
+
+        <div class="card shadow mb-2 bg-white rounded-pill">
+            <div class="card-body ">
+            <div class="row">
+                <div class="col-md-6 weights" style="color:#150E56">WHEN</div>
+                <div class="col-md-6 weights" style="color:#150E56"> AMOUNT  </div>
+             </div>
+            </div>
+        </div>
+        {% for row in texpense %}  
+        
+        <div class="card shadow mb-2 bg-white rounded-bottom">
+            <div class="card-body ">
+            <div class="row">
+                <div id ="ttime" class="col-md-6 weights orange">{{row [0]}}</div>
+                <div id="tamount" class="col-md-6 weights">   {{row[1] }}   </div>
+             </div>
+            </div>
+        </div>
+                
+     
+     {% endfor %}
+</div>
+</div>
+<section>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="mt-5 mb-3">Expense Breakdown</h3>
+ 
+            <div class="card shadow mb-2 bg-white rounded-bottom">
+                <div class="card-body ">
+                <div class="row">
+                    <div class="col-md-6 orange weights">Food</div>
+                    <div id="tfood" class="col-md-6  weights">   {{ t_food}}   </div>
+                 </div>
+                </div>
+            </div>
+ 
+            <div class="card shadow mb-2 bg-white rounded">
+             <div class="card-body">
+             <div class="row">
+                 <div class="col-md-6 orange weights">Entertainment</div>
+                 <div id="tentertainment" class="col-md-6  weights"> {{ t_entertainment}}   </div>
+              </div>
+             </div>
+         </div>
+ 
+ 
+         <div class="card shadow mb-2 bg-white rounded">
+             <div class="card-body">
+             <div class="row">
+                 <div class="col-md-6 orange weights">Business</div>
+                 <div id="tbusiness" class="col-md-6  weights"> {{t_business}}   </div>
+              </div>
+             </div>
+         </div>
+ 
+ 
+         <div class="card shadow mb-2 bg-white rounded">
+             <div class="card-body">
+             <div class="row">
+                 <div  class="col-md-6 orange weights">Rent</div>
+                 <div id="trent" class="col-md-6  weights"> {{  t_rent }}  </div>
+              </div>
+             </div>
+         </div>
+ 
+ 
+         <div class="card shadow mb-2 bg-white rounded">
+             <div class="card-body">
+             <div class="row">
+                 <div class="col-md-6 orange weights">EMI</div>
+                 <div id="temi"  class="col-md-6  weights">{{ t_EMI }}   </div>
+              </div>
+             </div>
+         </div>
+ 
+ 
+         <div class="card shadow mb-2 bg-white rounded">
+             <div class="card-body">
+             <div class="row">
+                 <div class="col-md-6 orange weights">Other</div>
+                 <div id="tother" class="col-md-6  weights"> {{ t_other}}</div>
+              </div>
+             </div>
+         </div>
+ 
+         <div class="card shadow mb-2 btn-outline-danger rounded-pill">
+             <div class="card-body">
+             <div class="row">
+                 <div class="col-md-6 weights" style="color:green">Total</div>
+                 <div class="col-md-6  weights">₹ {{total}}  </div>
+              </div>
+             </div>
+         </div>
+      
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js">
+</script>
+        </div>
+        <div class="col-md-6 mt-5">
+         <canvas id="myChart" width="400" height="400"></canvas>
+         <script>
+             let food = document.getElementById('tfood').innerHTML
+             let entertainment = document.getElementById('tentertainment').innerHTML
+             let business = document.getElementById('tbusiness').innerHTML
+             let rent = document.getElementById('trent').innerHTML
+             let emi = document.getElementById('temi').innerHTML
+             let other = document.getElementById('tother').innerHTML
+         var ctx = document.getElementById('myChart').getContext('2d');
+         var myChart = new Chart(ctx, {
+             type: 'doughnut',
+             data: {
+                 labels: ['Food', 'Entertainment', 'Business', 'Rent', 'EMI', 'Other'],
+                 datasets: [{
+                     label: 'Expenses Chart',
+                     data: [food, entertainment, business, rent, emi, other],
+                     backgroundColor: [
+                     'rgb(255, 99, 132)',
+                     'rgb(0, 0, 0)',
+                     'rgb(255, 205, 86)',
+                     '#3D0000',
+                        'rgb(54, 162, 235)',
+                         'rgb(215, 159, 64)'
+                     ],
+                    
+                 }]
+             },
+             options: {
+                 responsive: true,
+                 plugins: {
+       legend: {
+         position: 'bottom',
+       },
+       title: {
+         display: true,
+         text: 'EXPENSE BREAKDOWN'
+       }
+     }
+             }
+         });
+ 
+ 
+ 
+ 
+  
+         </script>
+        </div>
+    </div>
+ </div>
+
+
+
+</section>
+
+
+</div>
+
+
+
+
+{% endblock %}
+</html>
